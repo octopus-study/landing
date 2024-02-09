@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
+import { Auxiliary } from './components/modules/auxiliary'
 import { Footer } from './components/modules/footer'
 import { Header } from './components/modules/header'
 import { UserState } from './contexts/user'
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-dark`}>
         <UserState>
           <Header />
-          {/* <Auxiliary /> */}
+          <Auxiliary />
           <main className={`min-h-[calc(100vh-70px)]`}>{children}</main>
           <Footer />
         </UserState>

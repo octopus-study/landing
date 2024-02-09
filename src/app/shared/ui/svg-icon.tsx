@@ -1,6 +1,6 @@
 import { SVGProps } from 'react'
 
-type GenSvgNames = 'participant'
+type GenSvgNames = 'participant' | 'plus' | 'cross'
 type SidebarSvgNames = 'calendar'
 type SvgNames = GenSvgNames | SidebarSvgNames
 

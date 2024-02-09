@@ -1,3 +1,4 @@
+import * as StudyConst from './study'
 import * as ThemeConst from './theme'
 
-export { ThemeConst }
+export { StudyConst, ThemeConst }

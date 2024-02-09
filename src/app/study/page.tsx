@@ -1,4 +1,8 @@
+'use client'
+
 import { Notification } from '@modules/notification'
+import { Disclosure, Timeline } from '../components/ui'
+import { StudyConst } from '../shared/constants'
 import { StudyCard } from './components/card'
 
 const Study = () => {
@@ -18,7 +22,33 @@ const Study = () => {
 
       <Notification text='Количество мест в 2023-2024 учебном году - 100' />
 
-      <StudyCard img='https://thumb.tildacdn.com/tild6366-6665-4236-a336-363561333962/-/cover/556x716/center/center/-/format/webp/fab65e30-8eae-4872-b.png' />
+      <div className='bg-accent'>
+        <div className='mx-8'>
+          <h2 className='text-center text-white text-3xl font-bold'>
+            Процесс отбора
+          </h2>
+          <div className='flex items-start justify-center gap-4'>
+            {StudyConst.PROC_SELECTION.map((selection, idx) => (
+              <StudyCard key={idx} number={idx + 1} {...selection} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className='bg-white'>
+        {StudyConst.DESCRIPTION_TIMELINE.map((desc, idx) => (
+          <Disclosure className='w-full' key={idx}>
+            <Disclosure.Button>
+              {idx + 1}. {StudyConst.TIMELINE[idx]}
+            </Disclosure.Button>
+            <Disclosure.Panel>{desc}</Disclosure.Panel>
+          </Disclosure>
+        ))}
+      </div>
+
+      <div className='bg-warn'>
+        <Timeline steps={StudyConst.TIMELINE} />
+      </div>
     </div>
   )
 }

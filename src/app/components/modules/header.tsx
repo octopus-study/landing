@@ -20,24 +20,42 @@ export const Header = () => {
 
       <nav>
         <ul className='flex items-center gap-4 flex-wrap'>
-          <li className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'>
-            <Link href='/'>О школе</Link>
-          </li>
-          <li className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'>
-            <Link href='/study'>Учиться у нас</Link>
-          </li>
-          <li className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'>
-            <Link href='/'>Поддержка в обучении</Link>
-          </li>
-          <li className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'>
-            <Link href='/'>Поддержка школы</Link>
-          </li>
-          <li className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'>
-            <Link href='/'>События</Link>
-          </li>
-          <li className='bg-dark text-white py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'>
-            <Link href='/'>Контакты</Link>
-          </li>
+          <Link
+            className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
+            href='/'
+          >
+            О школе
+          </Link>
+          <Link
+            className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
+            href='/study'
+          >
+            Учиться у нас
+          </Link>
+          <Link
+            className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
+            href={{ pathname: '/support', query: 'entity=education' }}
+          >
+            Поддержка в обучении
+          </Link>
+          <Link
+            className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
+            href={{ pathname: '/support', query: 'entity=school' }}
+          >
+            Поддержка школы
+          </Link>
+          <Link
+            className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
+            href='/'
+          >
+            События
+          </Link>
+          <Link
+            className='bg-dark text-white py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
+            href='/'
+          >
+            Контакты
+          </Link>
         </ul>
       </nav>
     </header>

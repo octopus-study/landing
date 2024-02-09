@@ -1,23 +1,28 @@
+import { NumericDot } from '@ui/index'
+
 type Props = {
   img: string
+  title: string
+  description: string
+  number: number
 }
 
-export const StudyCard = ({ img }: Props) => {
+export const StudyCard = ({ img, title, description, number }: Props) => {
   return (
-    <div className='inline-flex flex-col'>
+    <div className='inline-flex flex-col w-72'>
       <div
-        className='h-96 w-72 bg-cover flex flex-col justify-end'
+        className='h-96  bg-cover flex flex-col justify-end'
         style={{ backgroundImage: `url(${img})` }}
       >
         {/* <img src={img} alt='img card' /> */}
-        <div className='flex items-center mb-2 bg-white mx-2 rounded-2xl'>
-          <div className='flex justify-center items-center bg-red-500 px-4 py-2 rounded-full text-xl text-white'>
-            1
-          </div>
-          <p className='text-center'>Заявка на сайте</p>
+        <div className='flex items-center mb-2 bg-white mx-2 rounded-3xl gap-8 p-1'>
+          <NumericDot number={number} />
+          <p className='text-center'>{title}</p>
         </div>
       </div>
-      <div>text</div>
+      <div className='mt-4'>
+        <p className='text-white'>{description}</p>
+      </div>
     </div>
   )
 }

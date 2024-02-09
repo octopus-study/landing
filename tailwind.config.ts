@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import * as Animated from 'tailwindcss-animate'
 
 const config: Config = {
   content: [
@@ -14,8 +15,13 @@ const config: Config = {
       widest: '1em',
     },
     extend: {
+      fontSize: {
+        '1.5xl': '1.375rem', // 22px
+      },
       colors: {
         primary: '#5865f2',
+        accent: '#6E5FFE',
+        warn: '#d70926',
         dark: '#202225',
         'dark-accent': '#2f3136',
       },
@@ -26,6 +32,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [Animated],
 }
 export default config
