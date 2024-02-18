@@ -9,13 +9,13 @@ const Study = () => {
   return (
     <div>
       <div>
-        <div className=''>
+        <div>
           <img src='https://thumb.tildacdn.com/tild3562-3833-4132-b338-353861376137/-/format/webp/Union.png' />
         </div>
 
         <div className='relative z-10 flex items-center justify-center'>
           <h1 className='text-white text-3xl font-bold uppercase'>
-            Как поступить в школу «...»?
+            Как поступить в школу «{process.env.NEXT_PUBLIC_SCHOOL_NAME}»?
           </h1>
         </div>
       </div>

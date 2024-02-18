@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export const Header = () => {
   const scrollDirection = useScrollDirection()
+  console.log(scrollDirection)
 
   return (
     <header

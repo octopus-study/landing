@@ -20,7 +20,7 @@ export default function Home() {
       >
         <div className='flex justify-center items-center h-full'>
           <h1 className='text-white text-4xl tracking-widest opacity-65'>
-            OCTOPUS
+            {process.env.NEXT_PUBLIC_SCHOOL_NAME!.toUpperCase()}
           </h1>
         </div>
       </SectionWithBackground>
