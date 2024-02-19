@@ -1,10 +1,12 @@
 import { SVGProps } from 'react'
+import { EmojiNames } from '../interfaces/emoji'
 
-type GenSvgNames = 'participant' | 'plus' | 'cross' | 'more'
+type GenSvgNames = 'participant' | 'plus' | 'cross' | 'more' | 'star'
+type SocialSvgNames = 'whatsapp' | 'telegram'
 type SidebarSvgNames = 'calendar'
-type SvgNames = GenSvgNames | SidebarSvgNames
+type SvgNames = GenSvgNames | SidebarSvgNames | EmojiNames | SocialSvgNames
 
-type PrefixNames = 'general' | 'sidebar'
+type PrefixNames = 'general' | 'sidebar' | 'emoji' | 'social'
 
 interface Props {
   height: number

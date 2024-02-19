@@ -1,8 +1,14 @@
 import Link from 'next/link'
+import { EmojiNames } from '../shared/interfaces/emoji'
+import { SvgIcon } from '../shared/ui'
 
 type Props = {
   theme: 'dark' | 'light'
-  nextReactionText: string
+  nextButton: {
+    text: string
+    emoji: EmojiNames
+    goto: string
+  }
   subject: {
     name: string
     icon: string
@@ -10,15 +16,12 @@ type Props = {
       role: string
       first_name: string
       last_name: string
+      slug: string
     }
   }
 }
 
-export const ParticipantCard = ({
-  theme,
-  subject,
-  nextReactionText,
-}: Props) => {
+export const ParticipantCard = ({ theme, subject, nextButton }: Props) => {
   return (
     <div className='flex ml-56 items-center h-full'>
       <div
@@ -36,7 +39,10 @@ export const ParticipantCard = ({
         <div className='inline-flex gap-2 self-start items-center bg-black text-white justify-center px-3 py-1 rounded-2xl text-xl my-3'>
           <p>{subject.participant.role}</p>
           <div className='w-1.5 h-1.5 rounded-full bg-white' />
-          <p>{`${subject.participant.first_name} ${subject.participant.last_name}`}</p>
+          <Link
+            href={`/participants/${subject.participant.slug}`}
+            className='hover:text-warn ease-in-out duration-300'
+          >{`${subject.participant.first_name} ${subject.participant.last_name}`}</Link>
         </div>
 
         <div className='flex flex-col'>
@@ -51,15 +57,28 @@ export const ParticipantCard = ({
               </p>
             </div>
           </div>
-          <div className='inline-flex self-start bg-dark hover:bg-zinc-700 text-white px-4 py-3 rounded-2xl duration-150 mt-6'>
-            <Link href='/study' className='text-base font-bold'>
-              <div className='flex items-center justify-between'>
-                <p>{nextReactionText}</p>
-                <p>em</p>
-              </div>
-              <p>Узнать больше...</p>
-            </Link>
-          </div>
+          {nextButton && (
+            <div className='inline-flex self-start bg-dark hover:bg-zinc-700 text-white px-4 py-3 rounded-2xl duration-150 mt-6'>
+              <Link
+                href={`/${nextButton.goto}`}
+                className='text-base font-bold'
+              >
+                <div className='flex items-center justify-between'>
+                  <p>{nextButton.text}</p>
+                  {nextButton.emoji && (
+                    <SvgIcon
+                      prefix='emoji'
+                      name={nextButton.emoji}
+                      width={16}
+                      height={16}
+                      fill='white'
+                    />
+                  )}
+                </div>
+                <p>Узнать больше...</p>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

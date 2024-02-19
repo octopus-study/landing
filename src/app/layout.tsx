@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     'Обучение по 8 современным направлениям для школьников 12-18 лет',
   creator: 'gayfield community',
   keywords: `${process.env.NEXT_PUBLIC_SCHOOL_NAME}, it-школа, образование современным направлениям`,
+  icons: '/assets/images/octopus.png',
 }
 
 const HEADER_HEIGHT = 70

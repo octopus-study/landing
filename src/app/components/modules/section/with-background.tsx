@@ -1,7 +1,7 @@
 'use client'
 
 import { useSlideShow } from '@/app/shared/hooks'
-import { PropsWithChildren } from 'react'
+import { HTMLAttributes, PropsWithChildren } from 'react'
 import { Section } from './index'
 
 type Props = {
@@ -12,15 +12,16 @@ type Props = {
 export const SectionWithBackground = ({
   imgList,
   children,
+  className,
   ...props
-}: Props) => {
+}: Props & HTMLAttributes<HTMLDivElement>) => {
   const { activeIdx } = useSlideShow(imgList.length, 6000)
 
   return (
     <Section
-      style={{ backgroundImage: `url(${imgList[activeIdx]})` }}
-      className='bg-cover'
       {...props}
+      style={{ backgroundImage: `url(${imgList[activeIdx]})` }}
+      className={`bg-cover bg-center ${className}`}
     >
       {children}
     </Section>

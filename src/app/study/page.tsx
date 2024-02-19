@@ -1,22 +1,27 @@
 'use client'
 
 import { Notification } from '@modules/notification'
-import { Disclosure, Timeline } from '../components/ui'
+import { CropImage, Disclosure, Timeline } from '../components/ui'
 import { StudyConst } from '../shared/constants'
+import { SvgIcon } from '../shared/ui'
 import { StudyCard } from './components/card'
 
 const Study = () => {
   return (
     <div>
       <div>
-        <div>
-          <img src='https://thumb.tildacdn.com/tild3562-3833-4132-b338-353861376137/-/format/webp/Union.png' />
-        </div>
-
-        <div className='relative z-10 flex items-center justify-center'>
-          <h1 className='text-white text-3xl font-bold uppercase'>
-            Как поступить в школу «{process.env.NEXT_PUBLIC_SCHOOL_NAME}»?
-          </h1>
+        <div className='h-96 relative'>
+          <div className='absolute z-10 w-screen top-44 flex flex-col items-center gap-14 justify-center'>
+            <h1 className='text-white text-5xl font-bold text-center'>
+              Как поступить в школу <br />«{process.env.NEXT_PUBLIC_SCHOOL_NAME}
+              »?
+            </h1>
+            <SvgIcon name='more' height={50} width={35} />
+          </div>
+          <CropImage
+            src='https://sun9-37.userapi.com/impg/Zu9K6EYqvqUgsghDNiUdD2UFdJXBxen2NTT8OQ/V0GYp_A0Ces.jpg?size=1280x960&quality=95&sign=5e712b2e20470552318a48aac700163c&type=album'
+            className='h-96 w-full object-cover'
+          />
         </div>
       </div>
 

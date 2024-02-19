@@ -1,11 +1,11 @@
 'use client'
 
 import { useScrollDirection } from '@shared/hooks'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const Header = () => {
   const scrollDirection = useScrollDirection()
-  console.log(scrollDirection)
 
   return (
     <header
@@ -14,8 +14,16 @@ export const Header = () => {
       }`}
     >
       <div>
-        <Link href='/'>
-          <img src='' alt='logo' />
+        <Link href='/' className='flex items-center gap-2'>
+          <Image
+            src='/assets/images/octopus.png'
+            alt='brand'
+            width={52}
+            height={52}
+          />
+          <p className='font-bold text-2xl hidden xl:block'>
+            {process.env.NEXT_PUBLIC_SCHOOL_NAME}
+          </p>
         </Link>
       </div>
 

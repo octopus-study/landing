@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { CropImage } from '../components/ui'
 import { SvgIcon } from '../shared/ui'
 
@@ -36,8 +37,80 @@ export const EducationSupportPage = () => {
       </div>
 
       <div className='bg-accent'>
-        <p>hello</p>
+        <h2 className='text-4xl font-bold text-center text-white py-16'>
+          О финансировании
+        </h2>
+
+        <div className='flex flex-col mx-4 items-center'>
+          <div className='flex items-start gap-6 '>
+            <FinanceCard title='Успейте подать заявку' showControls>
+              Если вам требуется поддержка или вы планируете искать
+              финансирование на участие в программе после того, как узнаете о
+              зачислении,{' '}
+              <strong>
+                подавайте заявку как можно раньше – это даст нам больше времени,
+                чтобы предложить поддержку учеников потенциальным меценатам.
+              </strong>
+            </FinanceCard>
+            <FinanceCard title='Стипендия на программу'>
+              Любой кандидат при подаче заявки может указать необходимость
+              финансовой поддержки для оплаты участия в программе.
+              {` ${process.env.NEXT_PUBLIC_SCHOOL_NAME} `}
+              предоставляет такую возможность и стремится привлечь для этого
+              партнеров и сообщество, но мы не можем гарантировать конкретное
+              число мест и зачисление на ближайший поток.
+            </FinanceCard>
+          </div>
+
+          <div className='bg-white rounded-xl p-4 mt-6 w-full'>
+            <div className='h-72 w-full'>
+              <img
+                src={SRC}
+                alt=''
+                className='h-72 w-full object-cover rounded-2xl'
+              />
+            </div>
+            <div className='my-4'>
+              <p className='text-xl text-justify [text-align-last:center]'>
+                <strong>{process.env.NEXT_PUBLIC_SCHOOL_NAME}</strong> стремится
+                привлекать бизнес-компании и частных филантропов для
+                финансирования обучения наших учеников, чтобы как можно больше
+                детей имело возможность получить новые навыки и ресурсы для
+                развития своих творческих проектов.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
 }
+
+type FinanceProps = {
+  title: string
+  showControls?: boolean
+} & PropsWithChildren
+
+const FinanceCard = ({ title, children, showControls }: FinanceProps) => (
+  <div className='bg-black text-white py-8 px-6 max-w-xl rounded-2xl flex-1'>
+    <div className='flex items-center gap-2'>
+      <SvgIcon name='star' width={32} height={32} />
+      <h4 className='text-3xl font-bold'>{title}</h4>
+    </div>
+    <div className='my-4'>
+      <p className='text-xl font-normal'>{children}</p>
+    </div>
+    {showControls && (
+      <div className='my-8'>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='#'
+          className='bg-warn p-4 rounded-full text-lg font-semibold'
+        >
+          Подать заявку на поступление
+        </a>
+      </div>
+    )}
+  </div>
+)

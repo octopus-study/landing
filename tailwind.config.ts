@@ -1,3 +1,4 @@
+import FlowBite from 'flowbite/plugin'
 import type { Config } from 'tailwindcss'
 import * as Animated from 'tailwindcss-animate'
 
@@ -32,6 +33,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [Animated],
+  plugins: [Animated, FlowBite],
 }
 export default config

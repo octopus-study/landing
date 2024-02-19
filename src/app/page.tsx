@@ -36,13 +36,18 @@ export default function Home() {
             icon: '',
             name: 'Кинопроизводство',
             participant: {
-              first_name: 'Александра',
-              last_name: 'Петровская',
+              first_name: 'Алла',
+              last_name: 'Кархарова',
               role: 'Куратор',
+              slug: 'kaxxarova',
             },
           }}
           theme='dark'
-          nextReactionText='Интересно!'
+          nextButton={{
+            text: 'Интересно!',
+            emoji: 'smile',
+            goto: 'movie',
+          }}
         />
       </SectionWithBackground>
 
@@ -60,10 +65,15 @@ export default function Home() {
               first_name: 'Егор',
               last_name: 'Иванов',
               role: 'Куратор',
+              slug: 'egorivanov',
             },
           }}
           theme='light'
-          nextReactionText='Интересно!'
+          nextButton={{
+            text: 'Интересно!',
+            emoji: 'grin-hearts',
+            goto: '3d',
+          }}
         />
       </SectionWithBackground>
     </div>

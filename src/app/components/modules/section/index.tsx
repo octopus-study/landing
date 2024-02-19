@@ -4,12 +4,19 @@ import { HTMLAttributes, PropsWithChildren } from 'react'
 
 type Props = {
   fullScreen?: boolean
-} & PropsWithChildren &
-  HTMLAttributes<HTMLDivElement>
+} & PropsWithChildren
 
-export const Section = ({ children, fullScreen, ...props }: Props) => {
+export const Section = ({
+  children,
+  fullScreen,
+  className,
+  ...props
+}: Props & HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div {...props} className={fullScreen ? 'h-screen' : 'h-full'}>
+    <div
+      {...props}
+      className={`${fullScreen ? 'h-screen' : 'h-full'} ${className}`}
+    >
       {children}
     </div>
   )

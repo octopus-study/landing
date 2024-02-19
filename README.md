@@ -1,3 +1,3 @@
 # OCTOPUS LANGING
 
-## link: https://landing-rosy-iota.vercel.app/
+## link: https://landing-5974kvemi-omitted.vercel.app
