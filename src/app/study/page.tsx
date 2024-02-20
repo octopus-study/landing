@@ -75,20 +75,48 @@ const Study = () => {
         </Container>
       </div>
 
-      <div className='bg-white'>
-        {StudyConst.DESCRIPTION_TIMELINE.map((desc, idx) => (
-          <Disclosure className='w-full' key={idx}>
-            <Disclosure.Button>
-              {idx + 1}. {StudyConst.TIMELINE[idx]}
-            </Disclosure.Button>
-            <Disclosure.Panel>{desc}</Disclosure.Panel>
-          </Disclosure>
-        ))}
+      <div>
+        <img
+          src='https://sun9-37.userapi.com/impg/Zu9K6EYqvqUgsghDNiUdD2UFdJXBxen2NTT8OQ/V0GYp_A0Ces.jpg?size=1280x960&quality=95&sign=5e712b2e20470552318a48aac700163c&type=album'
+          alt='promo'
+          className='object-cover h-96 w-full bg-center'
+        />
       </div>
 
-      <div className='bg-warn'>
-        <Timeline steps={StudyConst.TIMELINE} />
+      <div className='py-12'>
+        <Container>
+          <h2 className='text-center font-bold text-3xl mb-12'>
+            Карта проведения программы
+          </h2>
+          <Timeline steps={StudyConst.TIMELINE} />
+          <div className='text-white bg-accent py-10 px-14 mt-8 rounded-3xl w-4/5 mx-auto'>
+            <p className='text-2xl text-center font-semibold'>
+              Три уровня достижений!
+            </p>
+            <p className='text-base text-justify mt-8'>
+              Учеба по каждому направлению делится на уровни, как в компьютерной
+              игре. А каждый уровень делится на два интересных этапа. Завершив
+              воркшоп, студент возвращается к самостоятельной работе, где
+              готовится к следующему проекту
+            </p>
+          </div>
+        </Container>
       </div>
+
+      <div className='py-12'>
+        <Container>
+          {StudyConst.DESCRIPTION_TIMELINE.map((desc, idx) => (
+            <Disclosure className='w-full' key={idx}>
+              <Disclosure.Button>
+                {idx + 1}. {StudyConst.TIMELINE[idx]}
+              </Disclosure.Button>
+              <Disclosure.Panel>{desc}</Disclosure.Panel>
+            </Disclosure>
+          ))}
+        </Container>
+      </div>
+
+      <div className='bg-warn'></div>
     </div>
   )
 }

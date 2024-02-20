@@ -51,14 +51,20 @@ export const Footer = () => {
         </div>
         {/* legal */}
         <div className='w-1/4'>
-          <ul>
+          <ul className='absolute whitespace-nowrap'>
             <li>
-              <Link href='/'>Список юридических документов</Link>
+              <Link href='/legal/docs'>Список юридических документов</Link>
             </li>
             <li>
-              <Link href='/'>
+              <Link href='/legal/requisites'>
                 Реквизиты {process.env.NEXT_PUBLIC_SCHOOL_NAME}
               </Link>
+            </li>
+            <li>
+              <Link href='/legal/sale'>Правила акций</Link>
+            </li>
+            <li>
+              <Link href='/legal/privacy'>Политика конфиденциальности</Link>
             </li>
           </ul>
         </div>

@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
-import { Raleway } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import { Footer } from './components/modules/footer'
 import { Header } from './components/modules/header'
 import { UserState } from './contexts/user'
 import './globals.css'
 
-const inter = Raleway({ subsets: ['cyrillic', 'latin'] })
+const inter = Roboto({
+  weight: ['400', '500', '700'],
+  subsets: ['cyrillic', 'latin'],
+})
 
 export const metadata: Metadata = {
   title: `Школа креативных технологий ${process.env.NEXT_PUBLIC_SCHOOL_NAME}`,

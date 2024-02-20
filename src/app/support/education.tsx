@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { CropImage } from '../components/ui'
+import { Container, CropImage } from '../components/ui'
 import { SvgIcon } from '../shared/ui'
 
 const SRC =
@@ -36,13 +36,13 @@ export const EducationSupportPage = () => {
         </div>
       </div>
 
-      <div className='bg-accent'>
-        <h2 className='text-4xl font-bold text-center text-white py-16'>
+      <div className='bg-accent py-16'>
+        <h2 className='text-4xl font-bold text-center text-white mb-16'>
           О финансировании
         </h2>
 
-        <div className='flex flex-col mx-4 items-center'>
-          <div className='flex items-start gap-6 '>
+        <Container className='flex flex-col mx-4 items-center'>
+          <div className='flex items-start gap-6'>
             <FinanceCard title='Успейте подать заявку' showControls>
               Если вам требуется поддержка или вы планируете искать
               финансирование на участие в программе после того, как узнаете о
@@ -62,11 +62,11 @@ export const EducationSupportPage = () => {
             </FinanceCard>
           </div>
 
-          <div className='bg-white rounded-xl p-4 mt-6 w-full'>
+          <div className='bg-white rounded-xl py-5 px-8 mt-6 w-full'>
             <div className='h-72 w-full'>
               <img
                 src={SRC}
-                alt=''
+                alt='octopus'
                 className='h-72 w-full object-cover rounded-2xl'
               />
             </div>
@@ -80,7 +80,56 @@ export const EducationSupportPage = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Container>
+      </div>
+
+      <div className='py-16'>
+        <Container>
+          <div className='flex items-start gap-6'>
+            <div className='bg-warn text-white rounded-3xl p-8'>
+              <h3 className='text-2xl font-bold w-2/3'>
+                Финансовая поддержка для оплаты участия в программе может
+                покрывать до 100% от стоимости курса.
+              </h3>
+              <div className='flex justify-between items-end relative mt-3'>
+                <p className='text-lg'>
+                  Мы уверены, что осознанная инвестиция в свое образование
+                  мотивирует студентов максимально отдаваться учебе и добиваться
+                  результатов уже в процессе прохождения программы. Это
+                  доказывают и многочисленные примеры выпускников, сообщество
+                  которых уже пересекло отметку в 800 участников!
+                </p>
+                <SvgIcon
+                  name='more'
+                  className='absolute right-0'
+                  width={35}
+                  height={50}
+                />
+              </div>
+            </div>
+            <div className='h-full rounded-3xl'>
+              <img
+                src={SRC}
+                alt='octopus finance'
+                className='h-full rounded-3xl object-cover'
+              />
+            </div>
+          </div>
+
+          <div className='bg-black flex items-center justify-between px-8 pt-14 pb-8 rounded-3xl mt-6'>
+            <div className='text-white w-2/3'>
+              <p className='text-2xl font-bold'>
+                Изучайте возможности софинансирования на нашем сайте и
+                заполняйте заявку на участие в программе{' '}
+                {process.env.NEXT_PUBLIC_SCHOOL_NAME} — их прием продлится до 20
+                июня
+              </p>
+            </div>
+            <button className='bg-white text-dark rounded-3xl text-2xl font-bold px-12 py-4'>
+              Заполнить форму
+            </button>
+          </div>
+        </Container>
       </div>
     </div>
   )

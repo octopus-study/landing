@@ -31,7 +31,7 @@ export const Header = () => {
         <ul className='flex items-center gap-4 flex-wrap'>
           <Link
             className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
-            href='/'
+            href='/school'
           >
             О школе
           </Link>
@@ -55,13 +55,13 @@ export const Header = () => {
           </Link>
           <Link
             className='bg-gray-300 text-dark py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
-            href='/'
+            href='/events'
           >
             События
           </Link>
           <Link
             className='bg-dark text-white py-2 px-4 rounded-3xl hover:bg-gray-500 duration-300'
-            href='/'
+            href='/contacts'
           >
             Контакты
           </Link>

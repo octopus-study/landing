@@ -10,15 +10,19 @@ type GenSvgNames =
   | 'society'
   | 'lightbulb'
   | 'chart-line'
+
 type SocialSvgNames = 'whatsapp' | 'telegram'
 type SidebarSvgNames = 'calendar'
+type SpecialSvgNames = 'red-arrow' | 'trophy'
+
 export type SvgNames =
   | GenSvgNames
   | SidebarSvgNames
   | EmojiNames
   | SocialSvgNames
+  | SpecialSvgNames
 
-type PrefixNames = 'general' | 'sidebar' | 'emoji' | 'social'
+type PrefixNames = 'general' | 'sidebar' | 'emoji' | 'social' | 'special'
 
 interface Props {
   height: number
