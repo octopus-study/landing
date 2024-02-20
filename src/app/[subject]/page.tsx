@@ -42,13 +42,6 @@ type Props = {
   params: {
     subject: string
   }
-  data: {
-    [key: string]: SubjectDoc
-  }
-}
-
-const fetchData = async (subject: string) => {
-  return data[subject]
 }
 
 const Subject = ({ params }: Props) => {

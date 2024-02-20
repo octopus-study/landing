@@ -1,14 +1,14 @@
 'use client'
 
-import { Notification } from '@modules/notification'
-import { CropImage, Disclosure, Timeline } from '../components/ui'
+import { Container, CropImage, Disclosure, Timeline } from '../components/ui'
 import { StudyConst } from '../shared/constants'
 import { SvgIcon } from '../shared/ui'
 import { StudyCard } from './components/card'
+import { ExpectationCard } from './components/expectation-card'
 
 const Study = () => {
   return (
-    <div>
+    <div className='bg-white'>
       <div>
         <div className='h-96 relative'>
           <div className='absolute z-10 w-screen top-44 flex flex-col items-center gap-14 justify-center'>
@@ -25,11 +25,43 @@ const Study = () => {
         </div>
       </div>
 
-      <Notification text='Количество мест в 2023-2024 учебном году - 100' />
+      <div className='bg-accent mt-8'>
+        <p className='text-xl text-white font-bold text-center py-2'>
+          Количество мест в 2023-2024 учебном году - 100
+        </p>
+      </div>
 
-      <div className='bg-accent'>
-        <div className='mx-8'>
-          <h2 className='text-center text-white text-3xl font-bold'>
+      <Container className='py-12'>
+        <div className='grid grid-cols-2 gap-8'>
+          <div>
+            <p className='text-4xl font-semibold'>
+              Профиль ученика просветительской программы
+            </p>
+            <p className='text-2xl'>
+              Возраст <strong className='text-warn'>от 12 до 17 лет</strong>
+            </p>
+          </div>
+          <ExpectationCard iconName='society'>
+            Готовность к кооперации и командному взаимодействию, коммуникативные
+            навыки и критическое мышление, устойчивость, толерантность к
+            высокому уровню неопределенности, гибкость, умение формулировать
+            идеи и решать проблемы.
+          </ExpectationCard>
+          <ExpectationCard iconName='chart-line'>
+            Желание развивать свои навыки в современных творческих и
+            технологических направлениях.
+          </ExpectationCard>
+          <ExpectationCard iconName='lightbulb'>
+            Активные, эрудированные, хорошо обучаемые, креативные, умные и
+            талантливые дети, интересующиеся современными трендами в науке,
+            технологиях и искусстве.
+          </ExpectationCard>
+        </div>
+      </Container>
+
+      <div className='bg-accent pb-10'>
+        <Container className='mx-8'>
+          <h2 className='text-center text-white text-3xl py-12 font-bold'>
             Процесс отбора
           </h2>
           <div className='flex items-start justify-center gap-4'>
@@ -37,7 +69,10 @@ const Study = () => {
               <StudyCard key={idx} number={idx + 1} {...selection} />
             ))}
           </div>
-        </div>
+          <button className='bg-warn w-full text-white mt-4 text-base rounded-3xl py-4'>
+            Подать заявку на поступление
+          </button>
+        </Container>
       </div>
 
       <div className='bg-white'>
