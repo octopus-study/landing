@@ -8,6 +8,11 @@ import { LegalDocsOffer } from './offer'
 import { LegalDocsServices } from './services'
 
 const LegalDocs = () => {
+  const href =
+    typeof window !== 'undefined' && window.location.href
+      ? window.location.href
+      : ''
+
   const searchParams = useSearchParams()
 
   switch (searchParams.get('type')) {
@@ -31,7 +36,7 @@ const LegalDocs = () => {
           <li>
             Договор-оферта{' '}
             <Link href={{ query: 'type=offer' }} className='underline'>
-              {window.location.href}?type=offer.
+              {href}?type=offer.
             </Link>
           </li>
           <li>
@@ -40,19 +45,19 @@ const LegalDocs = () => {
               href={{ query: 'type=offer-additional' }}
               className='underline'
             >
-              {window.location.href}?type=offer-additional.
+              {href}?type=offer-additional.
             </Link>
           </li>
           <li>
             Перечень услуг{' '}
             <Link href={{ query: 'type=services' }} className='underline'>
-              {window.location.href}?type=services.
+              {href}?type=services.
             </Link>
           </li>
           <li>
             Просветительская программа{' '}
             <Link href={{ query: 'type=program' }} className='underline'>
-              {window.location.href}?type=program.
+              {href}?type=program.
             </Link>
           </li>
         </ul>

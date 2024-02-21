@@ -3,6 +3,11 @@
 import { Container } from '@/app/components/ui'
 
 const LegalPrivacy = () => {
+  const origin =
+    typeof window !== 'undefined' && window.location.origin
+      ? window.location.origin
+      : ''
+
   return (
     <div className='bg-white min-h-[calc(100vh-70px)]'>
       <Container className='py-16'>
@@ -41,8 +46,7 @@ const LegalPrivacy = () => {
           <p>
             Предоставлением согласия на обработку персональных данных является
             нажатие кнопки «Записаться» при подаче заявки на онлайн-мероприятие{' '}
-            {process.env.NEXT_PUBLIC_SCHOOL_NAME} {window.location.origin}{' '}
-            (далее – «Сайт»).
+            {process.env.NEXT_PUBLIC_SCHOOL_NAME} {origin} (далее – «Сайт»).
           </p>
 
           <p>
