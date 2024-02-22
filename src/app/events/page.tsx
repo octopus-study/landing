@@ -18,7 +18,11 @@ const Events = () => {
           <Container>
             <div className='grid gap-8 justify-center grid-cols-[320px_320px_320px]'>
               {EventConst.list.map((event, idx) => (
-                <Link href={`/events/${event.slug}`} key={idx} className='w-80'>
+                <Link
+                  href={`/events/${event.slug}`}
+                  key={idx}
+                  className='w-80 flex flex-col'
+                >
                   <div className='h-80 rounded-3xl'>
                     <img
                       src={event.background_img}
@@ -26,7 +30,7 @@ const Events = () => {
                       className='object-cover rounded-3xl h-80 border-solid border-4 border-warn'
                     />
                   </div>
-                  <div className='bg-white pt-4 px-4 pb-6 mt-1 rounded-3xl border-solid border-4 border-warn hover:bg-accent hover:text-white duration-300'>
+                  <div className='bg-white flex-1 pt-4 px-4 pb-6 mt-1 rounded-3xl border-solid border-4 border-warn hover:bg-accent hover:text-white duration-300'>
                     <div className='flex items-center gap-2 text-sm'>
                       <p>События</p>
                       <div className='w-2 h-2 bg-warn rounded-full' />

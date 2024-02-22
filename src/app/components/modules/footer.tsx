@@ -11,9 +11,9 @@ export const Footer = () => {
         <div className='w-1/4'>
           <Image
             src='/assets/images/octopus.png'
-            alt='brand'
-            height={64}
-            width={64}
+            alt='footer brand'
+            width={52}
+            height={52}
           />
         </div>
         {/* feedback */}
@@ -74,7 +74,7 @@ export const Footer = () => {
         {/* social */}
         <div className='flex flex-col w-1/4'>
           <p>Следи за нами в соцсетях</p>
-          <ul className='flex items-center gap-3 text-white mt-4'>
+          <ul className='flex flex-wrap items-center gap-3 text-white mt-4'>
             <li className='rounded-full border-solid border-2 border-blue-700 flex items-center p-3'>
               <a href='#' target='_blank' rel='noopener noreferrer'>
                 <SvgIcon
