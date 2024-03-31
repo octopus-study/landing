@@ -10,7 +10,7 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Raleway', 'Arial', 'sans-serif'],
+      sans: ['Roboto', 'Arial', 'sans-serif'],
     },
     letterSpacing: {
       widest: '1em',
@@ -18,6 +18,9 @@ const config: Config = {
     extend: {
       fontSize: {
         '1.5xl': '1.375rem', // 22px
+      },
+      screens: {
+        'max-lg': { max: '1024px' },
       },
       colors: {
         primary: '#5865f2',

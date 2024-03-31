@@ -5,7 +5,7 @@ export const Container = ({
   className,
   ...props
 }: PropsWithChildren & HTMLAttributes<HTMLDivElement>) => (
-  <div {...props} className={`w-3/4 mx-auto ${className}`}>
+  <div {...props} className={`w-3/4 mx-auto ${className ? className : ''}`}>
     {children}
   </div>
 )

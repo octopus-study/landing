@@ -13,7 +13,7 @@ type GenSvgNames =
 
 type SocialSvgNames = 'whatsapp' | 'telegram'
 type SidebarSvgNames = 'calendar'
-type SpecialSvgNames = 'red-arrow' | 'trophy'
+type SpecialSvgNames = 'red-arrow' | 'trophy' | 'bars'
 
 export type SvgNames =
   | GenSvgNames

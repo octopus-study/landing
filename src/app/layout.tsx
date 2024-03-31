@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { Footer } from './components/modules/footer'
 import { Header } from './components/modules/header'
-import { UserState } from './contexts/user'
 import './globals.css'
+import { Providers } from './providers'
 
 const inter = Roboto({
   weight: ['400', '500', '700'],
@@ -29,12 +29,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className} bg-dark`}>
-        <UserState>
+        <Providers>
           <Header />
           {/* <Auxiliary /> */}
           <main className={`min-h-[calc(100vh-70px)]`}>{children}</main>
           <Footer />
-        </UserState>
+        </Providers>
       </body>
     </html>
   )

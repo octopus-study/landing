@@ -1,12 +1,12 @@
 'use client'
 
+import { SectionWithBackground } from '@components/modules/section/with-background'
+import { Carousel } from '@components/ui'
+import { SvgIcon } from '@shared/ui'
+import { TranslateUtils } from '@shared/utils'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
-import { SectionWithBackground } from '../components/modules/section/with-background'
-import { Carousel } from '../components/ui'
-import { SvgIcon } from '../shared/ui'
-import { TranslateUtils } from '../shared/utils'
 import data from './MOCK'
 
 interface IParticipant {
