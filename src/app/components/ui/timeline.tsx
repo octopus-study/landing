@@ -4,7 +4,7 @@ type Props = {
 
 export const Timeline = ({ steps }: Props) => {
   return (
-    <ol className='flex items-center w-full'>
+    <ol className='flex items-center w-full flex-col md:flex-row'>
       {steps.map((step, idx) => (
         <div
           key={idx}

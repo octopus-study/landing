@@ -10,6 +10,8 @@ type GenSvgNames =
   | 'society'
   | 'lightbulb'
   | 'chart-line'
+  | 'eye'
+  | 'eye-off'
 
 type SocialSvgNames = 'whatsapp' | 'telegram'
 type SidebarSvgNames = 'calendar'

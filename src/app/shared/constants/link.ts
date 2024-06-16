@@ -6,12 +6,15 @@ interface Props extends LinkProps {
 }
 
 export const MAIN: Props[] = [
-  { href: '/school', text: 'О школе' },
+  // { href: '/school', text: 'О школе' },
   { href: '/study', text: 'Учиться у нас' },
   {
     href: { pathname: '/support', query: 'entity=education' },
     text: 'Поддержка в обучении',
   },
-  { href: { pathname: '/support', query: 'entity=school' }, text: 'События' },
-  { href: '/events', text: 'Контакты', className: '!bg-dark !text-white' },
+  {
+    href: { pathname: '/support', query: 'entity=school' },
+    text: 'Поддержка школы',
+  },
+  { href: '/events', text: 'События', className: '!bg-dark !text-white' },
 ]

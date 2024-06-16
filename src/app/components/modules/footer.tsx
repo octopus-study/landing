@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 export const Footer = () => {
   return (
-    <footer className='w-screen bg-black text-white px-56 py-16 text-base relative'>
+    <footer className='w-screen bg-black text-white px-6 md:px-56 py-16 text-base relative'>
       {/* first */}
-      <div className='flex items-start gap-4'>
+      <div className='flex items-start flex-wrap md:flex-nowrap gap-4'>
         {/* logo */}
         <div className='w-1/4'>
           <Image

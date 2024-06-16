@@ -21,7 +21,7 @@ export const SectionWithBackground = ({
     <Section
       {...props}
       style={{ backgroundImage: `url(${imgList[activeIdx]})` }}
-      className={`bg-cover bg-center ${className}`}
+      className={`bg-cover duration-300 bg-center ${className}`}
     >
       {children}
     </Section>

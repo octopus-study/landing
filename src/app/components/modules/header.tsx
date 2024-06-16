@@ -3,6 +3,7 @@
 import { UiContext } from '@/app/contexts/ui'
 import { LinkConst } from '@/app/shared/constants'
 import { SvgIcon } from '@/app/shared/ui'
+import { useSelector } from '@/app/store'
 import { useScrollDirection } from '@shared/hooks'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,6 +12,7 @@ import { Drawer } from './drawer'
 
 export const Header = () => {
   const scrollDirection = useScrollDirection()
+  const { isAuth } = useSelector((s) => s.auth)
   const { modalOpen, showModal } = useContext(UiContext)
 
   return (
@@ -49,6 +51,14 @@ export const Header = () => {
             ))}
           </ul>
         </nav>
+
+        <div className='bg-blue-600 text-white py-2 px-4 rounded-xl'>
+          {!isAuth ? (
+            <Link href='/login'>Авторизация</Link>
+          ) : (
+            <Link href='/profile'>Профиль</Link>
+          )}
+        </div>
 
         <div
           className='lg:hidden cursor-pointer'

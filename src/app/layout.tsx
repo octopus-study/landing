@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/sonner'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { Footer } from './components/modules/footer'
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.className} bg-dark`}>
         <Providers>
+          <Toaster />
           <Header />
           {/* <Auxiliary /> */}
           <main className={`min-h-[calc(100vh-70px)]`}>{children}</main>
